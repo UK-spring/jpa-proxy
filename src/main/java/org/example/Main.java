@@ -34,9 +34,19 @@ public class Main {
 //            System.out.println("proxyTutor.getName() = " + proxyTutor.getName());
 //            System.out.println("proxyTutor.getClass() = " + proxyTutor.getClass());
 
+            // LazyInitializationException
+//            Tutor proxyTutor = em.getReference(Tutor.class, tutor.getId());
+//            System.out.println("proxyTutor.getClass() = " + proxyTutor.getClass());
+
+            // 준영속 상태
+            em.detach(proxyTutor);
+
+            proxyTutor.getName();
+
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
+            e.printStackTrace();
         } finally {
             em.close();
         }
