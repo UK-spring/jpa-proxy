@@ -1,11 +1,10 @@
 package org.example;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 import org.example.entity.Company;
 import org.example.entity.Tutor;
+
+import java.util.List;
 
 public class FetchTypeEagerMain {
 
@@ -39,6 +38,9 @@ public class FetchTypeEagerMain {
 
             // getCompany().getName()
             System.out.println("findTutor.getCompany().getName() = " + findTutor.getCompany().getName());
+
+            // JPQL
+//            List<Tutor> tutorList = em.createQuery("select t from Tutor t", Tutor.class).getResultList();
 
             transaction.commit();
         } catch (Exception e) {
