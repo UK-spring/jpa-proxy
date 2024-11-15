@@ -14,6 +14,7 @@ public class Tutor {
 
     @ManyToOne
 //    @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "company_id")
     private Company company;
 
