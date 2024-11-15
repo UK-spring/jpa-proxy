@@ -39,9 +39,9 @@ public class Main {
 //            System.out.println("proxyTutor.getClass() = " + proxyTutor.getClass());
 
             // 준영속 상태
-            em.detach(proxyTutor);
-
-            proxyTutor.getName();
+//            em.detach(proxyTutor);
+//
+//            proxyTutor.getName();
 
             transaction.commit();
         } catch (Exception e) {
